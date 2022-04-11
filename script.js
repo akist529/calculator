@@ -1,10 +1,5 @@
 // JAVASCRIPT FOR CALCULATOR
 
-console.log(add(2, 4));
-console.log(subtract (6, 3));
-console.log(multiply(5, 5));
-console.log(divide(25, 5));
-
 function add(firstNum, secondNum) {
     return firstNum + secondNum;
 }
@@ -29,9 +24,24 @@ function operate(firstNum, secondNum, operator) {
 }
 
 function updateDisplay(number) {
-    if (document.getElementById('display').textContent === '0')
-    {
+    if (document.getElementById('display').textContent === '0') {
         document.getElementById('display').textContent = '';
+    }
+    
+    if (document.getElementById('display').textContent.length === 21) {
+        return;
+    }
+
+    let totalNum = document.getElementById('display').textContent.split('');
+
+    console.log(totalNum);
+
+    if (totalNum.length % 3 === 0) {
+        let numArray = document.getElementById('display').textContent.split('');
+
+        numArray.splice(1, 0, ',');
+
+        document.getElementById('display').textContent = numArray.toString();
     }
 
     document.getElementById('display').textContent += number;
