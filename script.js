@@ -1,5 +1,18 @@
 // JAVASCRIPT FOR CALCULATOR
 
+document.addEventListener("keydown", logKey);
+
+function logKey(e) {
+    console.log(e);
+
+    const test = e.key.match(/[0-9]/g);
+
+    if (test)
+    {
+        addNumToDisplay(`${e.key}`);
+    }
+}
+
 function add(firstNum, secondNum) {
     return firstNum + secondNum;
 }
@@ -23,26 +36,29 @@ function operate(firstNum, secondNum, operator) {
     if (operator === '/') { divide(firstNum, secondNum) };
 }
 
-function updateDisplay(number) {
-    if (document.getElementById('display').textContent === '0') {
-        document.getElementById('display').textContent = '';
+function addNumToDisplay(number) {
+    let displayNum = document.getElementById('currentNum').textContent;
+
+    if (displayNum === '0') {
+        document.getElementById('currentNum').textContent = '';
+        displayNum = '';
     }
-    
-    if (document.getElementById('display').textContent.length === 21) {
+
+    if (displayNum.replaceAll(',', '').length === 16) {
         return;
     }
 
-    let totalNum = document.getElementById('display').textContent.split('');
-
-    console.log(totalNum);
-
-    if (totalNum.length % 3 === 0) {
-        let numArray = document.getElementById('display').textContent.split('');
-
-        numArray.splice(1, 0, ',');
-
-        document.getElementById('display').textContent = numArray.toString();
+    if (displayNum.replaceAll(',', '').length === 15) {
+        let finalNum = number + ',';
+        document.getElementById('currentNum').textContent = finalNum + displayNum;
+        return;
     }
 
-    document.getElementById('display').textContent += number;
+    let totalNum = document.getElementById('currentNum').textContent.replaceAll(',', '').split('');
+
+    if ((totalNum.length % 3 === 0) && totalNum.length !== 0) {
+        document.getElementById('currentNum').textContent += ',';
+    }
+
+    document.getElementById('currentNum').textContent += number;
 }

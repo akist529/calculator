@@ -8,19 +8,19 @@
     <body>
         <div class="calculator">
             <div class="display">
-                <div id="display">0</div>
+                <div id="currentNum">0</div>
             </div>
             <div class="numpad">
-                <button class="gridItem" onclick="updateDisplay('7')">7</button>
-                <button class="gridItem">8</button>
-                <button class="gridItem">9</button>
-                <button class="gridItem">4</button>
-                <button class="gridItem">5</button>
-                <button class="gridItem">6</button>
-                <button class="gridItem">1</button>
-                <button class="gridItem">2</button>
-                <button class="gridItem">3</button>
-                <button class="gridItem" id="zero">0</button>
+                <button class="gridItem" onclick="addNumToDisplay('7')">7</button>
+                <button class="gridItem" onclick="addNumToDisplay('8')">8</button>
+                <button class="gridItem" onclick="addNumToDisplay('9')">9</button>
+                <button class="gridItem" onclick="addNumToDisplay('4')">4</button>
+                <button class="gridItem" onclick="addNumToDisplay('5')">5</button>
+                <button class="gridItem" onclick="addNumToDisplay('6')">6</button>
+                <button class="gridItem" onclick="addNumToDisplay('1')">1</button>
+                <button class="gridItem" onclick="addNumToDisplay('2')">2</button>
+                <button class="gridItem" onclick="addNumToDisplay('3')">3</button>
+                <button class="gridItem" onclick="addNumToDisplay('0')" id="zero">0</button>
             </div>
             <div class="operators">
                 <button class="gridItem" id="add">+</button>
