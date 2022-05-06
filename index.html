@@ -7,26 +7,99 @@
     </head>
     <body>
         <div class="calculator">
-            <div class="display">
+            <div class="gridItem display">
                 <div id="currentNum">0</div>
             </div>
-            <div class="numpad">
-                <button class="gridItem" onclick="addNumToDisplay('7')">7</button>
-                <button class="gridItem" onclick="addNumToDisplay('8')">8</button>
-                <button class="gridItem" onclick="addNumToDisplay('9')">9</button>
-                <button class="gridItem" onclick="addNumToDisplay('4')">4</button>
-                <button class="gridItem" onclick="addNumToDisplay('5')">5</button>
-                <button class="gridItem" onclick="addNumToDisplay('6')">6</button>
-                <button class="gridItem" onclick="addNumToDisplay('1')">1</button>
-                <button class="gridItem" onclick="addNumToDisplay('2')">2</button>
-                <button class="gridItem" onclick="addNumToDisplay('3')">3</button>
-                <button class="gridItem" onclick="addNumToDisplay('0')" id="zero">0</button>
+            <div class="gridItem numpad">
+                <button 
+                    class="gridItem seven" 
+                    onclick="addNumToDisplay('7')"
+                >7</button>
+                <button 
+                    class="gridItem eight" 
+                    onclick="addNumToDisplay('8')"
+                >8</button>
+                <button 
+                    class="gridItem nine" 
+                    onclick="addNumToDisplay('9')"
+                >9</button>
+                <button 
+                    class="gridItem four" 
+                    onclick="addNumToDisplay('4')"
+                >4</button>
+                <button 
+                    class="gridItem five" 
+                    onclick="addNumToDisplay('5')"
+                >5</button>
+                <button 
+                    class="gridItem six" 
+                    onclick="addNumToDisplay('6')"
+                >6</button>
+                <button 
+                    class="gridItem one" 
+                    onclick="addNumToDisplay('1')"
+                >1</button>
+                <button 
+                    class="gridItem two" 
+                    onclick="addNumToDisplay('2')"
+                >2</button>
+                <button 
+                    class="gridItem three" 
+                    onclick="addNumToDisplay('3')"
+                >3</button>
+                <button 
+                    class="gridItem sign"
+                >-</button>
+                <button 
+                    class="gridItem zero" 
+                    onclick="addNumToDisplay('0')" 
+                    id="zero"
+                >0</button>
+                <button 
+                    class="gridItem decimal" 
+                    onclick="addNumToDisplay('.')"
+                >.</button>
             </div>
-            <div class="operators">
-                <button class="gridItem" id="add">+</button>
-                <button class="gridItem" id="subtract">-</button>
-                <button class="gridItem" id="multiply">*</button>
-                <button class="gridItem" id="divide">/</button>
+            <div class="gridItem operators">
+                <button 
+                    class="gridItem equals"
+                >=</button>
+                <button 
+                    class="gridItem add" 
+                    id="add"
+                >+</button>
+                <button 
+                    class="gridItem subtract"
+                >-</button>
+                <button 
+                    class="gridItem multiply"
+                >X</button>
+                <button 
+                    class="gridItem divide"
+                >/</button>
+                <button 
+                    class="gridItem backspace"
+                >BACK</button>
+            </div>
+            <div class="gridItem functions">
+                <button 
+                    class="gridItem sqrt"
+                >²√x</button>
+                <button 
+                    class="gridItem sqr"
+                >x²</button>
+                <button 
+                    class="gridItem inverse"
+                >1/x</button>
+                <button 
+                    class="gridItem mod"
+                >%</button>
+                <button 
+                    class="gridItem clear--entry"
+                >CE</button>
+                <button 
+                    class="gridItem clear--all"
+                >C</button>
             </div>
         </div>
         <script type="text/javascript" src="./script.js"></script>

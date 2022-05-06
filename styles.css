@@ -9,47 +9,12 @@ body {
 
 .calculator {
     display: grid;
-    grid-template-columns: repeat(4, 200px);
-    grid-template-rows: 100px 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 3fr 5fr;
     justify-content: center;
     justify-items: center;
     align-items: center;
     height: 80vh;
-}
-
-.display {
-    display: grid;
-    grid-column: 1 / -1;
-    border: 3px solid black;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-content: center;
-    font-size: 5em;
-    justify-content: end;
-}
-
-.numpad {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    border: 3px solid black;
-    height: 100%;
-    width: 100%;
-    grid-column: 4 / 1;
-}
-
-.operators {
-    border: 3px solid black;
-    display: flex;
-    flex-direction: column;
-    font-size: 3em;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
 }
 
 .gridItem {
@@ -62,6 +27,57 @@ body {
     font-size: 2em;
 }
 
-#zero {
+.display {
+    display: grid;
     grid-column: 1 / -1;
+    grid-row: 1;
 }
+
+.numpad {
+    display: grid;
+    grid-column: 1;
+    grid-row: 3;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.operators {
+    display: grid;
+    grid-column: 2;
+    grid-row: 2 / -1;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.functions {
+    display: grid;
+    grid-column: 1;
+    grid-row: 2;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+/* GRID POSITIONING FOR FUNCTIONS */
+.mod, .clear--entry, .clear--all { grid-row: 1 }
+.inverse, .sqr, .sqrt { grid-row: 2 }
+.mod, .inverse { grid-column: 1 }
+.clear--entry, .sqr { grid-column: 2 }
+.clear--all, .sqrt { grid-column: 3 }
+
+/* GRID POSITIONING FOR OPERATORS */
+.backspace { grid-row: 1 }
+.divide { grid-row: 2 }
+.multiply { grid-row: 3 }
+.subtract { grid-row: 4 }
+.add { grid-row: 5 }
+.equals { grid-row: 6 }
+.backspace, .divide, .multiply, .subtract, .add, .equals { grid-column: 1 }
+
+/* GRID POSITIONING FOR NUMPAD */
+.seven, .eight, .nine { grid-row: 1 }
+.four, .five, .six { grid-row: 2 }
+.one, .two, .three { grid-row: 3 }
+.sign, .zero, .decimal { grid-row: 4 }
+.seven, .four, .one, .sign { grid-column: 1 }
+.eight, .five, .two, .zero { grid-column: 2 }
+.nine, .six, .three, .decimal { grid-column: 3 }
