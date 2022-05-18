@@ -3,18 +3,19 @@
 document.addEventListener("keydown", logKey);
 
 function logKey(e) {
-    console.log(e);
+    console.log(e.key);
 
-    const test = e.key.match(/[0-9]/g);
-
-    if (test)
+    if (e.keyCode >= 48 && e.keyCode <= 57)
     {
         addNumToDisplay(`${e.key}`);
     }
 }
 
-function add(firstNum, secondNum) {
-    return firstNum + secondNum;
+function add(currentNum) {
+    const prevNum = document.getElementById('prevNum').textContent;
+
+    document.getElementById('prevNum').textContent = `${currentNum} +`;
+    document.getElementById('currentNum').textContent = '0';
 }
 
 function subtract(firstNum, secondNum) {
@@ -29,36 +30,52 @@ function divide(firstNum, secondNum) {
     return firstNum / secondNum;
 }
 
-function operate(firstNum, secondNum, operator) {
-    if (operator === '+') { add(firstNum, secondNum) };
-    if (operator === '-') { subtract(firstNum, secondNum) };
-    if (operator === '*') { multiply(firstNum, secondNum) };
-    if (operator === '/') { divide(firstNum, secondNum) };
+function clearAll() {
+    document.getElementById('prevNum').textContent = '';
+    document.getElementById('currentNum').textContent = '0';
+}
+
+function clearEntry() {
+    document.getElementById('currentNum').textContent = '0';
+}
+
+function mod(num) {
+    const prevNum = document.getElementById('prevNum').textContent.split('').filter(/[0-9]/g);
+    console.log(prevNum)
+
+    if (!prevNum) {
+        document.getElementById('prevNum').textContent = '0';
+        document.getElementById('currentNum').textContent = '0';
+    }
+    else {
+        const prevNum = document.getElementById('prevNum').textContent.split('');
+    }
+}
+
+function operate(operator) {
+    const prevNum = document.getElementById('currentNum').textContent;
+
+    if (operator === '+') { add(prevNum) };
+    if (operator === '-') { subtract(prevNum) };
+    if (operator === '*') { multiply(prevNum) };
+    if (operator === '/') { divide(prevNum) };
+    if (operator === 'C') { clearAll() };
+    if (operator === 'CE') { clearEntry() };
+    if (operator === '%') { mod(prevNum) };
 }
 
 function addNumToDisplay(number) {
-    let displayNum = document.getElementById('currentNum').textContent;
+    const currentNum = document.getElementById('currentNum').textContent;
 
-    if (displayNum === '0') {
-        document.getElementById('currentNum').textContent = '';
-        displayNum = '';
-    }
-
-    if (displayNum.replaceAll(',', '').length === 16) {
+    if (currentNum.toString().length > 16) {
         return;
     }
-
-    if (displayNum.replaceAll(',', '').length === 15) {
-        let finalNum = number + ',';
-        document.getElementById('currentNum').textContent = finalNum + displayNum;
-        return;
+    else {
+        if (number == 0 && !currentNum) {
+            return;
+        }
+        else {
+            document.getElementById('currentNum').textContent += number;
+        }
     }
-
-    let totalNum = document.getElementById('currentNum').textContent.replaceAll(',', '').split('');
-
-    if ((totalNum.length % 3 === 0) && totalNum.length !== 0) {
-        document.getElementById('currentNum').textContent += ',';
-    }
-
-    document.getElementById('currentNum').textContent += number;
 }

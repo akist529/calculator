@@ -10,43 +10,30 @@ body {
 .calculator {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 3fr 5fr;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    height: 80vh;
+    grid-template-rows: 1fr 1fr 2fr;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    grid-gap: 1px;
+    background-color: lightgray;
 }
 
-.gridItem {
-    display: flex;
-    border: 3px solid black;
-    width: 100%;
+.calculator div {
     height: 100%;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
+    width: 100%;
+    grid-gap: 2px;
+}
+
+.calculator div button {
+    border-radius: 0;
 }
 
 .display {
     display: grid;
     grid-column: 1 / -1;
     grid-row: 1;
-}
-
-.numpad {
-    display: grid;
-    grid-column: 1;
-    grid-row: 3;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-}
-
-.operators {
-    display: grid;
-    grid-column: 2;
-    grid-row: 2 / -1;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    font-size: 2.5em;
 }
 
 .functions {
@@ -54,7 +41,20 @@ body {
     grid-column: 1;
     grid-row: 2;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+}
+
+.numpad {
+    display: grid;
+    grid-column: 1;
+    grid-row: 3;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.operators {
+    display: grid;
+    grid-column: 2;
+    grid-row: 2 / -1;
+    grid-template-columns: 1fr;
 }
 
 /* GRID POSITIONING FOR FUNCTIONS */

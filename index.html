@@ -3,103 +3,88 @@
     <head>
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="./styles.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <title>Calculator</title>
     </head>
     <body>
         <div class="calculator">
-            <div class="gridItem display">
-                <div id="currentNum">0</div>
+            <div class="display">
+                <div id="prevNum"></div>
+                <div id="currentNum"></div>
             </div>
-            <div class="gridItem numpad">
-                <button 
-                    class="gridItem seven" 
-                    onclick="addNumToDisplay('7')"
+            <div class="functions">
+                <button class="sqrt btn btn-primary">²√x</button>
+                <button class="sqr btn btn-primary">x²</button>
+                <button class="inverse btn btn-primary">1/x</button>
+                <button class="mod btn btn-primary"
+                    onClick="operate('%')"
+                >%</button>
+                <button class="clear--entry btn btn-danger"
+                    onClick="operate('CE')"
+                >CE</button>
+                <button class="clear--all btn btn-danger"
+                    onClick="operate('C')"
+                >C</button>
+            </div>
+            <div class="numpad">
+                <button class="seven btn btn-secondary" 
+                    onclick="addNumToDisplay(7)"
                 >7</button>
-                <button 
-                    class="gridItem eight" 
-                    onclick="addNumToDisplay('8')"
+                <button class="eight btn btn-secondary" 
+                    onclick="addNumToDisplay(8)"
                 >8</button>
-                <button 
-                    class="gridItem nine" 
-                    onclick="addNumToDisplay('9')"
+                <button class="nine btn btn-secondary" 
+                    onclick="addNumToDisplay(9)"
                 >9</button>
-                <button 
-                    class="gridItem four" 
-                    onclick="addNumToDisplay('4')"
+                <button class="four btn btn-secondary" 
+                    onclick="addNumToDisplay(4)"
                 >4</button>
-                <button 
-                    class="gridItem five" 
-                    onclick="addNumToDisplay('5')"
+                <button class="five btn btn-secondary" 
+                    onclick="addNumToDisplay(5)"
                 >5</button>
-                <button 
-                    class="gridItem six" 
-                    onclick="addNumToDisplay('6')"
+                <button class="six btn btn-secondary" 
+                    onclick="addNumToDisplay(6)"
                 >6</button>
-                <button 
-                    class="gridItem one" 
-                    onclick="addNumToDisplay('1')"
+                <button class="one btn btn-secondary" 
+                    onclick="addNumToDisplay(1)"
                 >1</button>
-                <button 
-                    class="gridItem two" 
-                    onclick="addNumToDisplay('2')"
+                <button class="two btn btn-secondary" 
+                    onclick="addNumToDisplay(2)"
                 >2</button>
-                <button 
-                    class="gridItem three" 
-                    onclick="addNumToDisplay('3')"
+                <button class="three btn btn-secondary" 
+                    onclick="addNumToDisplay(3)"
                 >3</button>
-                <button 
-                    class="gridItem sign"
-                >-</button>
-                <button 
-                    class="gridItem zero" 
-                    onclick="addNumToDisplay('0')" 
+                <button class="sign btn btn-primary"
+                >+/-</button>
+                <button class="zero btn btn-secondary" 
+                    onclick="addNumToDisplay(0)" 
                     id="zero"
                 >0</button>
-                <button 
-                    class="gridItem decimal" 
+                <button class="decimal btn btn-primary" 
                     onclick="addNumToDisplay('.')"
                 >.</button>
             </div>
-            <div class="gridItem operators">
+            <div class="operators">
                 <button 
-                    class="gridItem equals"
+                    class="equals btn btn-success"
                 >=</button>
                 <button 
-                    class="gridItem add" 
+                    class="add btn btn-primary" 
                     id="add"
+                    onClick="operate('+')"
                 >+</button>
                 <button 
-                    class="gridItem subtract"
+                    class="subtract btn btn-primary"
                 >-</button>
                 <button 
-                    class="gridItem multiply"
+                    class="multiply btn btn-primary"
                 >X</button>
                 <button 
-                    class="gridItem divide"
+                    class="divide btn btn-primary"
                 >/</button>
                 <button 
-                    class="gridItem backspace"
+                    class="backspace btn btn-danger"
                 >BACK</button>
-            </div>
-            <div class="gridItem functions">
-                <button 
-                    class="gridItem sqrt"
-                >²√x</button>
-                <button 
-                    class="gridItem sqr"
-                >x²</button>
-                <button 
-                    class="gridItem inverse"
-                >1/x</button>
-                <button 
-                    class="gridItem mod"
-                >%</button>
-                <button 
-                    class="gridItem clear--entry"
-                >CE</button>
-                <button 
-                    class="gridItem clear--all"
-                >C</button>
             </div>
         </div>
         <script type="text/javascript" src="./script.js"></script>
