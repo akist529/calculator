@@ -1,0 +1,200 @@
+// RESET
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+  button
+    background: none
+    border: none
+
+.App
+  position: relative
+  height: 100vh
+
+#desktop
+  display: grid
+  grid-template-rows: 1fr auto
+  height: 100vh
+  width: 100vw
+  position: absolute
+  top: 0
+  z-index: 0
+
+  #display
+    background-color: rgb(1, 130, 129)
+    grid-row: 1 / 2
+    display: grid
+    grid-template-rows: repeat(7, 100px) 1fr
+    justify-items: start
+
+    button
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      gap: 5px
+      width: 100px
+      margin: 10px
+
+      small
+        font-family: ms_sans_serif
+        color: white
+        max-width: 15ch
+        text-align: center
+
+  #taskbar
+    grid-row: 2 / 3
+    height: auto
+
+    display: flex
+    justify-content: space-between
+
+    #btn-start
+      display: flex
+      align-items: center
+      padding: 3px
+      margin: 3px 0
+
+      #win-logo
+        height: 24px
+        width: 24px
+
+      small
+        font-family: ms_sans_serif
+        font-weight: bold
+
+    #sys-tray
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      gap: 10px
+      margin: 3px
+      padding: 3px
+
+#calculator
+  position: absolute
+  top: 25%
+  left: 35%
+  z-index: 1
+  padding: 3px
+
+  .calc-title
+    display: flex
+    justify-content: start
+    align-items: center
+
+  .title-_
+    small
+      position: relative
+      bottom: 2px
+      font-family: ms_sans_serif
+      font-weight: bold
+
+  .title-□
+    small
+      color: grey
+      font-family: ms_sans_serif
+      font-weight: bold
+
+  .title-X
+    small
+      font-family: ms_sans_serif
+      font-weight: bold
+
+  #calc-header
+    display: flex
+    gap: 10px
+
+    button
+      padding: 5px
+      font-family: ms_sans_serif
+
+    button:hover
+      background-color: darkblue
+      color: white
+
+  #calc-window
+    display: grid
+    grid-template-rows: repeat(2, auto)
+    grid-template-columns: repeat(2, auto)
+    grid-row-gap: 10px
+    grid-column-gap: 20px
+
+    #calc-memory
+      grid-row: 1 / -1
+      grid-column: 1 / 2
+
+      display: grid
+      grid-template-rows: repeat(5, 40px)
+      grid-template-columns: 50px
+      grid-row-gap: 5px
+
+      button
+        color: red
+        font-weight: bold
+
+    #calc-clear
+      grid-row: 1 / 2
+      grid-column: 2 / 3
+      display: grid
+      grid-template-columns: repeat(3, 60px)
+      grid-column-gap: 5px
+
+      button
+        color: brown
+        font-weight: bold
+
+      #back
+        grid-column: 2 / 3
+
+      #clear-entry
+        grid-column: 3 / 4
+
+      #clear
+        grid-column: 4 / 5
+
+    #calc-math
+      grid-row: 2 / 3
+      grid-column: 2 / -1
+
+      display: grid
+      grid-template-columns: repeat(2, auto)
+      grid-column-gap: 5px
+
+      #calc-numpad
+        grid-column: 1 / 2
+
+        display: grid
+        grid-template-rows: repeat(4, 40px)
+        grid-template-columns: repeat(3, 50px)
+        grid-row-gap: 5px
+        grid-column-gap: 5px
+
+        button
+          color: blue
+          font-weight: bold
+
+      #calc-ops
+        grid-column: 2 / 3
+
+        display: grid
+        grid-template-rows: repeat(4, 40px)
+        grid-template-columns: repeat(2, 50px)
+        grid-row-gap: 5px
+        grid-column-gap: 5px
+
+        button
+          color: red
+          font-weight: bold
+
+        #calc-ops-adv
+          grid-row: 1 / 4
+          grid-column: 2 / 3
+
+          display: grid
+          grid-template-rows: repeat(3, auto)
+          grid-row-gap: 5px
+
+          button
+            color: darkblue
