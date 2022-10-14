@@ -41,9 +41,9 @@ export default function Calculator() {
             variant='menu'
             size='sm'
             onClick={() => setEditOpen(!editOpen)}
-            active={editOpen}
+            active={editOpen ? true : false}
             >Edit</button>
-            {editOpen && (
+            {editOpen ? (
               <List
                 style={{
                   position: 'absolute',
@@ -51,7 +51,7 @@ export default function Calculator() {
                   top: '100%',
                   zIndex: '9999'
                 }}
-                open={editOpen}
+                open={editOpen ? true : false}
                 onClick={() => setEditOpen(false)}
               >
                 <ListItem size='sm'>
@@ -63,14 +63,14 @@ export default function Calculator() {
                   <small>Ctrl+V</small>
                 </ListItem>
               </List>
-            )}
+            ) : undefined}
           <button
             variant='menu'
             size='sm'
             onClick={() => setViewOpen(!viewOpen)}
-            active={viewOpen}
+            active={viewOpen ? true : false}
           >View</button>
-          {viewOpen && (
+          {viewOpen ? (
             <List
               style={{
                 position: 'absolute',
@@ -78,20 +78,20 @@ export default function Calculator() {
                 top: '100%',
                 zIndex: '9999'
               }}
-              open={viewOpen}
+              open={viewOpen ? true : false}
               onClick={() => setViewOpen(false)}
             >
               <ListItem size='sm'>Scientific</ListItem>
               <ListItem size='sm'>Standard</ListItem>
             </List>
-          )}
+          ) : undefined}
           <button
             variant='menu'
             size='sm'
             onClick={() => setHelpOpen(!helpOpen)}
-            active={helpOpen}
+            active={helpOpen ? true : false}
           >Help</button>
-          {helpOpen && (
+          {helpOpen ? (
             <List
               style={{
                 position: 'absolute',
@@ -99,14 +99,14 @@ export default function Calculator() {
                 top: '100%',
                 zIndex: '9999'
               }}
-              open={helpOpen}
+              open={helpOpen ? true : false}
               onClick={() => setHelpOpen(false)}
             >
               <ListItem size='sm'>Help Topics</ListItem>
               <Divider />
               <ListItem size='sm'>About Calculator</ListItem>
             </List>
-          )}
+          ) : undefined}
         </Toolbar>
         <Divider />
         <TextField id='calc-display' />

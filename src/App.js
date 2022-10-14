@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import Desktop from './desktop.js';
 import Calculator from './calculator.js';
 import './App.css';

@@ -12,6 +12,9 @@
 .App {
   position: relative;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #desktop {
@@ -27,8 +30,8 @@
   background-color: rgb(1, 130, 129);
   grid-row: 1/2;
   display: grid;
-  grid-template-rows: repeat(7, 100px) 1fr;
-  justify-items: start;
+  grid-template-rows: repeat(8, 100px) 1fr;
+  justify-items: flex-start;
 }
 #desktop #display button {
   display: flex;
@@ -76,14 +79,12 @@
 
 #calculator {
   position: absolute;
-  top: 25%;
-  left: 35%;
   z-index: 1;
   padding: 3px;
 }
 #calculator .calc-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 #calculator .title-_ small {
@@ -136,7 +137,7 @@
   grid-row: 1/2;
   grid-column: 2/3;
   display: grid;
-  grid-template-columns: repeat(3, 60px);
+  grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 5px;
 }
 #calculator #calc-window #calc-clear button {
@@ -163,7 +164,7 @@
   grid-column: 1/2;
   display: grid;
   grid-template-rows: repeat(4, 40px);
-  grid-template-columns: repeat(3, 50px);
+  grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 5px;
   grid-column-gap: 5px;
 }
@@ -175,7 +176,7 @@
   grid-column: 2/3;
   display: grid;
   grid-template-rows: repeat(4, 40px);
-  grid-template-columns: repeat(2, 50px);
+  grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 5px;
   grid-column-gap: 5px;
 }
@@ -192,6 +193,20 @@
 }
 #calculator #calc-window #calc-math #calc-ops #calc-ops-adv button {
   color: darkblue;
+}
+
+@media screen and (max-width: 384px) {
+  .App {
+    position: static;
+  }
+  #desktop {
+    position: static;
+  }
+  #calculator {
+    left: 0;
+    right: 0;
+    overflow: scroll;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -36,7 +36,7 @@ export default function Desktop(props) {
             <small>My Briefcase</small>
           </button>
           <button className='display-icon'>
-            <img src={QuakeLogo} />
+            <img alt='Quake Logo' src={QuakeLogo} />
             <small>Quake</small>
           </button>
         </div>
