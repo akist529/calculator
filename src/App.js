@@ -32,6 +32,10 @@ const GlobalStyles = createGlobalStyle`
 `
 
 function App() {
+  const $ = (id) => {
+    return document.getElementById(id)
+  }
+
   let date = new Date().toLocaleTimeString().split(/:| /)
   date.splice(2, 1)
   date.splice(1, 0, ':')
@@ -39,6 +43,7 @@ function App() {
   date = date.join('')
 
   const [time, setTime] = React.useState(date)
+  const [number, setNumber] = React.useState(0)
 
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -61,7 +66,7 @@ function App() {
       <GlobalStyles />
       <ThemeProvider theme={original}>
         <Desktop time={time} />
-        <Calculator />
+        <Calculator number={number} setNumber={setNumber} />
       </ThemeProvider>
     </div>
   );

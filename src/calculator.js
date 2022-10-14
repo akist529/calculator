@@ -3,7 +3,7 @@ import { Window, WindowContent, Button, Toolbar, Divider, TextField, List, ListI
 import { Frame, TitleBar, ThemeProvider } from '@react95/core'
 import { Calculator as CalcIcon } from '@react95/icons'
 
-export default function Calculator() {
+export default function Calculator(props) {
   const [editOpen, setEditOpen] = React.useState(false)
   const [viewOpen, setViewOpen] = React.useState(false)
   const [helpOpen, setHelpOpen] = React.useState(false)
@@ -109,7 +109,7 @@ export default function Calculator() {
           ) : undefined}
         </Toolbar>
         <Divider />
-        <TextField id='calc-display' />
+        <TextField id='calc-display' value={props.number} disabled />
         <WindowContent id='calc-window'>
           <div id='calc-memory'>
             <Frame h={40} />
@@ -125,16 +125,16 @@ export default function Calculator() {
           </div>
           <div id='calc-math'>
             <div id='calc-numpad'>
-              <Button>7</Button>
-              <Button>8</Button>
-              <Button>9</Button>
-              <Button>4</Button>
-              <Button>5</Button>
-              <Button>6</Button>
-              <Button>1</Button>
-              <Button>2</Button>
-              <Button>3</Button>
-              <Button>0</Button>
+              <Button id='btn-7' onClick={props.setNumber(7)}>7</Button>
+              <Button id='btn-8'>8</Button>
+              <Button id='btn-9'>9</Button>
+              <Button id='btn-4'>4</Button>
+              <Button id='btn-5'>5</Button>
+              <Button id='btn-6'>6</Button>
+              <Button id='btn-1'>1</Button>
+              <Button id='btn-2'>2</Button>
+              <Button id='btn-3'>3</Button>
+              <Button id='btn-0'>0</Button>
               <Button>+/-</Button>
               <Button>.</Button>
             </div>

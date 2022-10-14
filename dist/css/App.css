@@ -116,7 +116,6 @@
 }
 #calculator #calc-display {
   background-color: white;
-  text-align: right;
 }
 #calculator #calc-window {
   display: grid;
